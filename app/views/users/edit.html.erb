@@ -1,6 +1,6 @@
 <h1>Хэрэглэгчийн мэйл: <%= current_user.email %></h1>
 <!-- #edit.html.erb -->
-<%= form_with scope: :user, url: user_path(@user), method: :patch, local: true do |form| %>
+<%= form_with model: @user, method: :patch, url: user_path, local: true do |form| %>
   <div class="mx-auto">
     <div>
       <%= form.label :email %>
