@@ -2,21 +2,29 @@
 <!-- #edit.html.erb -->
 <%= form_with model: @user, method: :patch, url: user_path, local: true do |form| %>
   <div class="mx-auto">
-    <div>
-      <%= form.label :email %>
-      <%= form.email_field :email, class: 'form-control' %>
+    <div class="form-group">
+      <%= form.label :email ,class: "col-md-4 control-label"%>
+      <div class="col-md-2">
+        <%= form.email_field :email, class: 'form-control' %>
+      </div>
     </div>
 
-    <div>
-      <%= form.label :password %>
-      <%= form.password_field :password, class: 'form-control' %>
+    <div class="form-group">
+      <%= form.label :password,class: "col-md-4 control-label" %>
+      <div class="col-md-2">
+        <%= form.password_field :password, class: 'form-control' %>
+      </div>
     </div>
 
-    <div>
-      <%= form.label :password %>
-      <%= form.password_field :password_confirmation, class: 'form-control' %>
+    <div class="form-group">
+      <%= form.label :password,class: "col-md-4 control-label" %>
+      <div class="col-md-2">
+        <%= form.password_field :password_confirmation, class: 'form-control' %>
+      </div>
     </div>
 
-    <%= form.submit 'засварлах' %>
+    <div class="actions" >
+      <%= form.submit 'засварлах' %>
+    </div>
   </div>
 <% end %>
