@@ -1,4 +1,4 @@
-<h1>Хэрэглэгчийн мэйл: <%= @user.email %></h1>
+<h1>Хэрэглэгчийн мэйл: <%= current_user.email %></h1>
 <!-- #edit.html.erb -->
 <%= form_with scope: :user, url: user_path(@user), method: :patch, local: true do |form| %>
   <div class="mx-auto">
@@ -20,8 +20,3 @@
     <%= form.submit 'засварлах' %>
   </div>
 <% end %>
-<!-- 
-  '' энэ хаалт нь ер нь бол дажгүй шүү ххах
-  "" энийгээ болохоор html  -->
-<!-- # яагаад гэвэл формын элементийг дуудаад form.textfield гэвэл input type='text' гэсэн үг. -->
-    <!-- # харин :password гэдэг нь моделийн аттрибут, өгөгдлийн сангийн баганын нэр нь гэсэн үг.  -->
