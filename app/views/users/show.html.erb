@@ -1,0 +1,23 @@
+<h3>Нэвтэрсэн хэрэглэгч: <%= current_user.email %> </h3>
+<!-- 
+<%= @user.id %>
+<%= @user.email %>
+<%= @user.created_at %>
+<%= @user.sign_in_count %> -->
+
+<table class="table table-info">
+  <tr>
+    <th>ID</th>
+    <th>Email</th>
+    <th>Created_at</th>
+    <th>Updated_at</th>
+    <th>SignInCount</th>
+  </tr>
+     <tr>
+      <td><%= @user.id %></td>
+      <td><%= @user.email %></td>
+      <td><%= @user.created_at %></td>
+      <td><%= @user.updated_at %></td>
+      <td><%= @user.sign_in_count %></td>
+  	</tr>	
+</table>
