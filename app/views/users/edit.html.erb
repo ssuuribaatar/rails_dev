@@ -1,2 +1,27 @@
 <h1>Хэрэглэгчийн мэйл: <%= @user.email %></h1>
-<%= render "form" %>
+<!-- #edit.html.erb -->
+<%= form_with scope: :user, url: user_path(@user), method: :patch, local: true do |form| %>
+  <div class="mx-auto">
+    <div>
+      <%= form.label :email %>
+      <%= form.email_field :email, class: 'form-control' %>
+    </div>
+
+    <div>
+      <%= form.label :password %>
+      <%= form.password_field :password, class: 'form-control' %>
+    </div>
+
+    <div>
+      <%= form.label :password %>
+      <%= form.password_field :password_confirmation, class: 'form-control' %>
+    </div>
+
+    <%= form.submit 'засварлах' %>
+  </div>
+<% end %>
+<!-- 
+  '' энэ хаалт нь ер нь бол дажгүй шүү ххах
+  "" энийгээ болохоор html  -->
+<!-- # яагаад гэвэл формын элементийг дуудаад form.textfield гэвэл input type='text' гэсэн үг. -->
+    <!-- # харин :password гэдэг нь моделийн аттрибут, өгөгдлийн сангийн баганын нэр нь гэсэн үг.  -->

@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    # @users = User.all.page(params[:page])
     @users = User.all.page(params[:page])
   end
 
@@ -31,14 +30,14 @@ class UsersController < ApplicationController
   def update
     if @user.update(user_params)
       bypass_sign_in(@user)
-      redirect_to ({ action: :index }), notice: 'Нууц үг амжилттай солигдлоо.'
+      redirect_to ({ action: :show, id: @user }), notice: 'Нууц үг амжилттай солигдлоо.'
     else
       render :edit
     end
   end
 
   def destroy
-    @user.destroy
+    @user.destroy!
     redirect_to users_path, notice: 'Амжилттай устгалаа.'
   end
 
